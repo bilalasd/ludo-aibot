@@ -1,26 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import LudoBoard from "./components/LudoBoard";
+// import updateBoard from "./store/actions/updateBoard";
+// import player1UpdateDice from "./store/actions/player1UpdateDice";
+import { connect } from "react-redux";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <LudoBoard></LudoBoard>
     </div>
   );
 }
+// const MapStateToProps = (state) => {
+//   return {
+//     board: state.board,
+//   };
+// };
 
-export default App;
+// const MapDispathToProps = (dispatch) => {
+//   return {
+//     // updateBoard: () => dispatch(updateBoard),
+//     // player1UpdateDice: () => dispatch(player1UpdateDice),
+//   };
+// };
+// export default connect(MapStateToProps, MapDispathToProps)(App);
+export default connect()(App);
